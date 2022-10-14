@@ -1,0 +1,150 @@
+
+  
+
+  
+  .grey-font {
+    color: gray;
+  }
+  
+  nav {
+    height: 70px;
+    display: flex;
+    margin: 10px;
+    padding: 0px 8px;
+    box-shadow: 0px 2px 7px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    background-color:#b46426;
+    display: flex;
+    justify-content: center;
+    
+  }
+  
+  .header {
+    height: 50px;
+    display: flex;
+    margin: 10px;
+    padding: 0px 8px;
+    box-shadow: 0px 2px 7px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    background-color:#93bcc8;
+    display: flex;
+    font-size: x-large;
+    font-family: cursive;
+   
+   
+  }
+  
+  .nav-title {
+    font-size: xx-large;
+      font-family: cursive;
+      align-self: center;
+  }
+  
+  .nav-title span {
+    font-family: fantasy;
+    font-size: xxx-large;
+    align-self: center;
+  }
+  
+  .intro-section {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    background-image: linear-gradient(#b46426, #93bcc8); 
+    
+  }
+  
+  .intro-img-wrapper img {
+    height: 100px;
+    border-radius: 50%;
+  }
+  
+  .intro-text-wrapper p {
+    margin-block-start: initial;
+    margin-block-end: initial;
+    font-size:large;
+  
+  }
+  
+  .intro-text-wrapper {
+  margin-left: 10px;
+  width: 76%;
+  align-self: center;
+  
+  }
+  
+  .div-border div {
+    border-bottom-style: ridge;
+    width: 50%;
+    
+  }
+  
+  .div-border {
+    justify-content: space-evenly;
+    display: flex;
+    
+  }
+  
+  .card {
+    width: 80%;
+    padding: 10px;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+  
+    
+  }
+  
+  .card-details {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+  }
+  
+  .card-location-bar {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .card-pic {
+    width: 30%;
+    height: 100%;
+    border-radius: 9px;
+  }
+  
+  
+  .card-location-bar {
+    height: 30px;
+    font-size: large;
+  }
+  
+  .card-location-bar a {
+    margin-left: 10px;
+  }
+  
+  .location-pin {
+    height: 80%;
+  }
+  
+  .location-title h1 {
+  
+   margin-block-start: inherit;
+   margin-block-end: inherit
+  
+  }
+  
+  
+  .travel-dates p {
+    font-weight: bold;
+    margin-block-start: inherit;
+    
+  }
+  .card-description p{
+    margin-block-start: initial;
+    font-size: smaller;
+  }
+   
+  
+  
+   
