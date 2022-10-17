@@ -5,7 +5,7 @@ import axios from 'axios';
 import { useState } from 'react';
 
  function App() {
-  const [randomUser, setRandomUser] = useState({})
+  const [randomUser, setRandomUser] = useState(null)
 
  const getRandomUser = () => {
 axios
@@ -18,7 +18,7 @@ axios
   return (
     <div>
 <button className='btn' onClick={getRandomUser}>Click Me!</button>
-{randomUser.length > 0 && <User data={randomUser}/>}
+{randomUser && <User data-testid="user-1" data={randomUser}/>}
     </div>
   );
 }
