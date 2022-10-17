@@ -7,25 +7,36 @@ export const EditArea = (props) => {
 			name: { title, first },
 		},
 	} = props;
-	console.log(props.data);
+	
 
 	return (
 		<div>
-			<input type="text" id="title" placeholder={title} />
-			<input type="text" id="name" placeholder={first} />
-			<input type="text" id="email" placeholder={email} />
+			<input type="text" id="title" placeholder={title} onChange={(event) => {
+					props.edit(
+                        document.getElementById('title').value,
+                     event
+                    );
+				}} />
+			<input type="text" id="first" placeholder={first} onChange={(event) => {
+					props.edit(
+                        document.getElementById('first').value,
+                        event
+                       
+                    );
+				}} />
+			<input type="text" id="email" placeholder={email} onChange={(event) => {
+					props.edit(
+                        document.getElementById('email').value,
+                        event
+                    );
+				}} />
 			<button
-				onClick={() => {
-					props.edit((prevState) => {
-						return {
-							...prevState,
-							email: document.getElementById('email').value,
-							name: {
-								title: document.getElementById('title').value,
-								first: document.getElementById('name').value,
-							},
-						};
-					});
+				onClick={() => {props.save()
+					// props.edit(
+                    //     document.getElementById('title').value,
+                    //     document.getElementById('name').value,
+                    //     document.getElementById('email').value,
+                    // );
 				}}
 			>
 				Save Changes
