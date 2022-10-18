@@ -4,9 +4,8 @@ import axios from 'axios';
 import { useState } from 'react';
 import EditBtn from './components/EditDialouge/EditBtn';
 
-function App() {
-	
-	const [randomUser, setRandomUser] = useState(null);
+ function App() {
+  const [randomUser, setRandomUser] = useState(null)
 
 	const getRandomUser = () => {
 		console.log(JSON.parse(localStorage.getItem('allEntries')));
@@ -28,40 +27,17 @@ function App() {
 			});
 	};
 
-	function setRandomUserHandler(newInput, event) {
-		console.log(newInput, event);
-		event.target.id !== 'email'
-			? setRandomUser((prevState) => {
-					return {
-						...prevState,
-						name: { ...prevState.name, [event.target.id]: newInput },
-					};
-			  })
-			: setRandomUser((prevState) => {
-					return {
-						...prevState,
-						[event.target.id]: newInput,
-					};
-			  });
-	}
 
 	 function setInLocalStorage() {
-		 setRandomUser((prevState) => {
-			return {
-				...prevState,
-				gender: true,
-			};
-		});
+		let existingEntries = JSON.parse(localStorage.getItem("allEntries"));
+		if(existingEntries == null) existingEntries = [];
+		localStorage.setItem("entry", JSON.stringify(randomUser));
+		// Save allEntries back to local storage
+		existingEntries.push(randomUser);
+		localStorage.setItem("allEntries", JSON.stringify(existingEntries));
+	
 	}
-//   useEffect(() => {
-//     let existingEntries = JSON.parse(localStorage.getItem('allEntries'));
-//     if (existingEntries == null) existingEntries = [];
-//     let entry = { randomUser };
-//     localStorage.setItem('entry', JSON.stringify(entry));
-//     existingEntries.push(entry);
-//     localStorage.setItem('allEntries', JSON.stringify(existingEntries));
 
-//   }, [randomUser.gender])
 
 	
 
@@ -76,11 +52,15 @@ function App() {
 				<EditBtn
 					data={randomUser}
 					setInLocalStorage={setInLocalStorage}
-					edit={setRandomUserHandler}
+					edit={setRandomUser}
 				/>
 			)}
 		</div>
 	);
+
+
+
+
 }
 
 export default App;

@@ -11,7 +11,7 @@ function clickToggle() {
   return (
     <div>
         <button onClick={clickToggle}>Edit</button>
-        {isClicked && <EditArea save={props.setInLocalStorage} data={props.data} edit={props.edit}/>}
+        {isClicked && <EditArea data={props.data} setInLocalStorage={props.setInLocalStorage} edit={props.edit}/>}
     </div>
   )
 }
