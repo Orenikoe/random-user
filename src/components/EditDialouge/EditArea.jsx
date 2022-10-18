@@ -1,13 +1,19 @@
 import React from 'react';
+import {UserContext, ButtonContext} from '../../UserContext';
+import { useContext } from 'react';
+
 
 export const EditArea = (props) => {
+	const { clickToggle } = useContext(ButtonContext)
+	const { setUserIsEdited} = useContext(UserContext)
+
+
 	const {
 		data: { email },
 		data: {
 			name: { title, first },
 		},
 	} = props;
-	console.log(props.data);
 
 	return (
 		<div>
@@ -16,6 +22,7 @@ export const EditArea = (props) => {
 				name="title"
 				placeholder={title}
 				onChange={(event) => {
+					setUserIsEdited(true);
 					props.edit((prevState) => {
 						return {
 							...prevState,
@@ -31,6 +38,7 @@ export const EditArea = (props) => {
 				name="first"
 				placeholder={first}
 				onChange={(event) => {
+					setUserIsEdited(true);
 					props.edit((prevState) => {
 						return {
 							...prevState,
@@ -47,6 +55,7 @@ export const EditArea = (props) => {
 				name="email"
 				placeholder={email}
 				onChange={(event) => {
+					setUserIsEdited(true)
 					props.edit((prevState) => {
 						return {
 							...prevState,
@@ -55,7 +64,9 @@ export const EditArea = (props) => {
 					});
 				}}
 			/>
-			<button onClick={props.setInLocalStorage}>Save Changes</button>
+			<button onClick={() =>{
+				clickToggle()
+				props.setInLocalStorage()}}>Save Changes</button>
 		</div>
 	);
 };

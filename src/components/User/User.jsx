@@ -1,10 +1,18 @@
 import React from 'react'
+import { useContext } from 'react';
+import { UserContext } from '../../UserContext';
+import { EditedSticker } from '../EditedFlag/EditedSticker';
 import './User-style.css'
 
 const User = ({data}) => {
-    const {name: {first, title}, email, picture: {large}, location: {city, country }} = data
+  const {userIsEdited} = useContext(UserContext)
 
-   
+    const {name: {first, title}, email, picture: {large}, location: {city, country }} = data
+    // 
+    data.isEdited = userIsEdited;
+
+    
+    
     return (
       <div className='card'>
       
@@ -19,6 +27,7 @@ const User = ({data}) => {
          </div>
          <div className="travel-dates">
         <p>{email}</p>
+        {userIsEdited && <EditedSticker/>}
       </div>
       <div className="card-description">
       </div>
